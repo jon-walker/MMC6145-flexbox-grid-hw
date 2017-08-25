@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display:block;
+}
+body {
+	font-family: 'arial', 'helvetica', sans-serif;
+	background-color: #fff;
+}
+p {
+	line-height: 200%;
+}
+
+/* --------------- Grid Layout and Basic Structures ----------------------*/
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto auto  100px 100px auto auto ;
+	max-width: 1200px;
+	margin: auto;
+}
+.wrapper h1 {
+	background-color: #d8d8d8;
+	grid-column: 1 / 13;
+	grid-row: 1 / span 1;
+	padding: 3%;
+	font-size: 3rem;
+	font-weight: bold;
+}
+.wrapper nav {
+	background-color: #ebebeb;
+	grid-column: 1 / span 2;
+	grid-row: 2 / span 1;
+	min-width: 300px;
+}
+.wrapper nav ul {
+	margin: 6%;
+	padding-left: 6%;
+	list-style-type: none;
+	line-height: 200%;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.wrapper article {
+	grid-column:  5 / span 7;
+	grid-row: 2 / span 1;
+}
+.wrapper article p {
+	margin: 6% 6% 12%;
+}
+footer {
+	background-color: #000;
+	color: #fff;
+	font-size: 3rem;
+	font-weight: bold;
+	grid-column: 1 / 13;
+	grid-row: 6 / span 1;
+	padding: 3%;
+}
+.gray-bar {
+	background-color: #d8d8d8;
+	grid-column: 1 / 13;
+	grid-row: 3 / 5;
+}
+/* --------------- Cards ----------------------*/
+
+.card-wrapper {
+	grid-column: 1 / 13;
+	grid-row: 4 / span 2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.card {
+	min-width: 200px;
+	border: solid 4px #777;
+	padding: 1.5%;
+	display: flex; /* Allows button to cling to bottom*/
+	flex-direction: column;
+	flex: 0 1 18%; /*Allows cards to shrink from base size if needed*/
+	margin-bottom: 6%;
+}
+.card p img {
+	width: 100%;
+}
+.card p:first-child {
+	height: 30%;
+	max-height: 300px;
+	width: 100%;
+	overflow: hidden; /*Ensures that the card images are equal ht w/o distortion*/
+}
+.card h2 {
+	margin: 6% 0;
+}
+.card button {
+	align-self: flex-end;/* Allows button to cling to bottom*/
+	margin-top: auto;
+	width: 100%;
+	padding: 9% 0;
+	background-color: #000;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: .9rem;
+}
